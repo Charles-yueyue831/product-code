@@ -1,0 +1,607 @@
+{
+  "schemaVersion": 1,
+  "project": {
+    "name": "modules",
+    "description": "产品用途尚需结合能力证据确认",
+    "languages": [
+      "JavaScript"
+    ],
+    "frameworks": []
+  },
+  "nodes": [
+    {
+      "id": "layer:cb79f0e2d57beb3f",
+      "type": "ArchitectureLayer",
+      "name": "接口层",
+      "summary": "根据目录职责推断的逻辑分组；不是已验证部署架构。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:5c762c91dffe93aa"
+      ]
+    },
+    {
+      "id": "module:14c2529eb4498c5d",
+      "type": "TechnicalModule",
+      "name": "api",
+      "summary": "源码目录 api；职责需结合关联能力和文件验证。",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:5c762c91dffe93aa"
+      ],
+      "layer": "接口层"
+    },
+    {
+      "id": "file:177af9ea9c4c9bc5",
+      "type": "File",
+      "name": "api/routes.js",
+      "summary": "JavaScript 文件",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:5c762c91dffe93aa"
+      ],
+      "moduleId": "module:14c2529eb4498c5d",
+      "layer": "接口层"
+    },
+    {
+      "id": "Function:8ed3fdc19fa35f64",
+      "type": "Function",
+      "name": "register",
+      "summary": "api/routes.js 定义的函数；存在声明不代表已上线。",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:357332e80887851a"
+      ],
+      "moduleId": "module:14c2529eb4498c5d",
+      "layer": "接口层"
+    },
+    {
+      "id": "api:8bc34a1e3c7b0d63",
+      "type": "API",
+      "name": "POST /instances",
+      "summary": "检测到路由形态的调用语法；框架绑定及对外可用性需要确认。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:e73281b7f48a7092"
+      ],
+      "moduleId": "module:14c2529eb4498c5d",
+      "layer": "接口层"
+    },
+    {
+      "id": "layer:036fd90783e698e0",
+      "type": "ArchitectureLayer",
+      "name": "业务与共享逻辑",
+      "summary": "根据目录职责推断的逻辑分组；不是已验证部署架构。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:25e979af58072bf5"
+      ]
+    },
+    {
+      "id": "module:9df6b026a8c6c26e",
+      "type": "TechnicalModule",
+      "name": "service",
+      "summary": "源码目录 service；职责需结合关联能力和文件验证。",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:25e979af58072bf5"
+      ],
+      "layer": "业务与共享逻辑"
+    },
+    {
+      "id": "file:4ef30c7d505ca377",
+      "type": "File",
+      "name": "service/instances.js",
+      "summary": "JavaScript 文件",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:25e979af58072bf5"
+      ],
+      "moduleId": "module:9df6b026a8c6c26e",
+      "layer": "业务与共享逻辑"
+    },
+    {
+      "id": "Function:d93509495106d38f",
+      "type": "Function",
+      "name": "createInstance",
+      "summary": "service/instances.js 定义的函数；存在声明不代表已上线。",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:1a6853e0aadb368b"
+      ],
+      "moduleId": "module:9df6b026a8c6c26e",
+      "layer": "业务与共享逻辑"
+    },
+    {
+      "id": "layer:011fe186dfc53964",
+      "type": "ArchitectureLayer",
+      "name": "数据层",
+      "summary": "根据目录职责推断的逻辑分组；不是已验证部署架构。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:63dbdf42e400d312"
+      ]
+    },
+    {
+      "id": "module:49a25f9feefaffec",
+      "type": "TechnicalModule",
+      "name": "storage",
+      "summary": "源码目录 storage；职责需结合关联能力和文件验证。",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:63dbdf42e400d312"
+      ],
+      "layer": "数据层"
+    },
+    {
+      "id": "file:1d2c09ed5bf726ad",
+      "type": "File",
+      "name": "storage/store.js",
+      "summary": "JavaScript 文件",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:63dbdf42e400d312"
+      ],
+      "moduleId": "module:49a25f9feefaffec",
+      "layer": "数据层"
+    },
+    {
+      "id": "Function:c7ed26f6ecf9bbec",
+      "type": "Function",
+      "name": "saveInstance",
+      "summary": "storage/store.js 定义的函数；存在声明不代表已上线。",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:f08398b6e4031d7e"
+      ],
+      "moduleId": "module:49a25f9feefaffec",
+      "layer": "数据层"
+    },
+    {
+      "id": "cap:8c39292cf6460f70",
+      "type": "ProductCapability",
+      "name": "POST /instances",
+      "summary": "从接口或导出函数提取的产品能力候选；需确认用户场景和实际开放状态。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:e73281b7f48a7092"
+      ],
+      "moduleId": "module:14c2529eb4498c5d",
+      "layer": "接口层",
+      "userProblem": "仅凭静态入口无法确认用户问题。",
+      "value": "需要产品经理结合实际使用场景确认。",
+      "mechanism": "由 api/routes.js 中的 POST /instances 入口提供实现线索。"
+    },
+    {
+      "id": "cap:e3fc10f646450fa9",
+      "type": "ProductCapability",
+      "name": "register",
+      "summary": "从接口或导出函数提取的产品能力候选；需确认用户场景和实际开放状态。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:357332e80887851a"
+      ],
+      "moduleId": "module:14c2529eb4498c5d",
+      "layer": "接口层",
+      "userProblem": "仅凭静态入口无法确认用户问题。",
+      "value": "需要产品经理结合实际使用场景确认。",
+      "mechanism": "由 api/routes.js 中的 register 入口提供实现线索。"
+    },
+    {
+      "id": "flow:114c11bc5964af62",
+      "type": "BusinessFlow",
+      "name": "createInstance 调用路径",
+      "summary": "静态可见调用的源码顺序；条件、循环和异常会改变实际执行。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:1a6853e0aadb368b"
+      ],
+      "moduleId": "module:9df6b026a8c6c26e"
+    },
+    {
+      "id": "step:419a46d1c0b4e7f1",
+      "type": "FlowStep",
+      "name": "saveInstance",
+      "summary": "静态调用位置；不保证运行时执行。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:fcbecc406539a124"
+      ],
+      "moduleId": "module:9df6b026a8c6c26e",
+      "parent": "flow:114c11bc5964af62"
+    },
+    {
+      "id": "cap:114c11bc5964af62",
+      "type": "ProductCapability",
+      "name": "createInstance",
+      "summary": "从接口或导出函数提取的产品能力候选；需确认用户场景和实际开放状态。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:1a6853e0aadb368b"
+      ],
+      "moduleId": "module:9df6b026a8c6c26e",
+      "layer": "业务与共享逻辑",
+      "userProblem": "仅凭静态入口无法确认用户问题。",
+      "value": "需要产品经理结合实际使用场景确认。",
+      "mechanism": "由 service/instances.js 中的 createInstance 入口提供实现线索。"
+    },
+    {
+      "id": "cap:a56f42f2d2b448ea",
+      "type": "ProductCapability",
+      "name": "saveInstance",
+      "summary": "从接口或导出函数提取的产品能力候选；需确认用户场景和实际开放状态。",
+      "status": "inferred",
+      "evidence": [
+        "evidence:f08398b6e4031d7e"
+      ],
+      "moduleId": "module:49a25f9feefaffec",
+      "layer": "数据层",
+      "userProblem": "仅凭静态入口无法确认用户问题。",
+      "value": "需要产品经理结合实际使用场景确认。",
+      "mechanism": "由 storage/store.js 中的 saveInstance 入口提供实现线索。"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:2293ae322112c494",
+      "source": "module:14c2529eb4498c5d",
+      "target": "layer:cb79f0e2d57beb3f",
+      "type": "BelongsTo",
+      "status": "inferred",
+      "evidence": [
+        "evidence:5c762c91dffe93aa"
+      ],
+      "basis": "目录命名启发式分层"
+    },
+    {
+      "id": "edge:f75e6df07d37d26a",
+      "source": "module:14c2529eb4498c5d",
+      "target": "file:177af9ea9c4c9bc5",
+      "type": "Contains",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:5c762c91dffe93aa"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:b521c7c89b1dcbe5",
+      "source": "file:177af9ea9c4c9bc5",
+      "target": "Function:8ed3fdc19fa35f64",
+      "type": "Contains",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:357332e80887851a"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:f49ea0b85dcc3911",
+      "source": "module:14c2529eb4498c5d",
+      "target": "api:8bc34a1e3c7b0d63",
+      "type": "Contains",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:e73281b7f48a7092"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:0a458334bcd57e5d",
+      "source": "module:9df6b026a8c6c26e",
+      "target": "layer:036fd90783e698e0",
+      "type": "BelongsTo",
+      "status": "inferred",
+      "evidence": [
+        "evidence:25e979af58072bf5"
+      ],
+      "basis": "目录命名启发式分层"
+    },
+    {
+      "id": "edge:669623f9c37123f7",
+      "source": "module:9df6b026a8c6c26e",
+      "target": "file:4ef30c7d505ca377",
+      "type": "Contains",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:25e979af58072bf5"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:5f99d85e230a92fa",
+      "source": "file:4ef30c7d505ca377",
+      "target": "Function:d93509495106d38f",
+      "type": "Contains",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:1a6853e0aadb368b"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:aa55e157f865da83",
+      "source": "module:49a25f9feefaffec",
+      "target": "layer:011fe186dfc53964",
+      "type": "BelongsTo",
+      "status": "inferred",
+      "evidence": [
+        "evidence:63dbdf42e400d312"
+      ],
+      "basis": "目录命名启发式分层"
+    },
+    {
+      "id": "edge:4bee48b5549e4f46",
+      "source": "module:49a25f9feefaffec",
+      "target": "file:1d2c09ed5bf726ad",
+      "type": "Contains",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:63dbdf42e400d312"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:9de6d73df85d3617",
+      "source": "file:1d2c09ed5bf726ad",
+      "target": "Function:c7ed26f6ecf9bbec",
+      "type": "Contains",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:f08398b6e4031d7e"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:894a7ea6288ab041",
+      "source": "file:177af9ea9c4c9bc5",
+      "target": "file:4ef30c7d505ca377",
+      "type": "DependsOn",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:5c762c91dffe93aa"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:822bd0d1ef715a9b",
+      "source": "module:14c2529eb4498c5d",
+      "target": "module:9df6b026a8c6c26e",
+      "type": "DependsOn",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:5c762c91dffe93aa"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:41eeba48c9f742c2",
+      "source": "module:14c2529eb4498c5d",
+      "target": "cap:8c39292cf6460f70",
+      "type": "Implements",
+      "status": "inferred",
+      "evidence": [
+        "evidence:e73281b7f48a7092"
+      ],
+      "basis": "入口到产品能力的候选映射"
+    },
+    {
+      "id": "edge:f16ab7bef40609a0",
+      "source": "cap:8c39292cf6460f70",
+      "target": "api:8bc34a1e3c7b0d63",
+      "type": "RelatedTo",
+      "status": "inferred",
+      "evidence": [
+        "evidence:e73281b7f48a7092"
+      ],
+      "basis": "源码入口证据"
+    },
+    {
+      "id": "edge:ab1fe0047af18ce0",
+      "source": "module:14c2529eb4498c5d",
+      "target": "cap:e3fc10f646450fa9",
+      "type": "Implements",
+      "status": "inferred",
+      "evidence": [
+        "evidence:357332e80887851a"
+      ],
+      "basis": "入口到产品能力的候选映射"
+    },
+    {
+      "id": "edge:fbaed12feeb045d9",
+      "source": "cap:e3fc10f646450fa9",
+      "target": "Function:8ed3fdc19fa35f64",
+      "type": "RelatedTo",
+      "status": "inferred",
+      "evidence": [
+        "evidence:357332e80887851a"
+      ],
+      "basis": "源码入口证据"
+    },
+    {
+      "id": "edge:41248a796f521dd5",
+      "source": "file:4ef30c7d505ca377",
+      "target": "file:1d2c09ed5bf726ad",
+      "type": "DependsOn",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:25e979af58072bf5"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:92bb23e57c8e708b",
+      "source": "module:9df6b026a8c6c26e",
+      "target": "module:49a25f9feefaffec",
+      "type": "DependsOn",
+      "status": "confirmed",
+      "evidence": [
+        "evidence:25e979af58072bf5"
+      ],
+      "basis": "源码静态结构"
+    },
+    {
+      "id": "edge:977d696290c528ac",
+      "source": "Function:d93509495106d38f",
+      "target": "Function:c7ed26f6ecf9bbec",
+      "type": "Calls",
+      "status": "inferred",
+      "evidence": [
+        "evidence:fcbecc406539a124"
+      ],
+      "basis": "标识符静态匹配；可能被局部变量遮蔽，不证明运行时调用"
+    },
+    {
+      "id": "edge:73c5dd241b10ea08",
+      "source": "Function:d93509495106d38f",
+      "target": "flow:114c11bc5964af62",
+      "type": "Supports",
+      "status": "inferred",
+      "evidence": [
+        "evidence:1a6853e0aadb368b"
+      ],
+      "basis": "从函数体提取"
+    },
+    {
+      "id": "edge:2634e804f3423901",
+      "source": "flow:114c11bc5964af62",
+      "target": "step:419a46d1c0b4e7f1",
+      "type": "Contains",
+      "status": "inferred",
+      "evidence": [
+        "evidence:fcbecc406539a124"
+      ],
+      "basis": "函数内调用"
+    },
+    {
+      "id": "edge:fadc007f4734e17b",
+      "source": "step:419a46d1c0b4e7f1",
+      "target": "Function:c7ed26f6ecf9bbec",
+      "type": "RelatedTo",
+      "status": "inferred",
+      "evidence": [
+        "evidence:fcbecc406539a124"
+      ],
+      "basis": "静态名称匹配"
+    },
+    {
+      "id": "edge:65260213b58a0982",
+      "source": "module:9df6b026a8c6c26e",
+      "target": "cap:114c11bc5964af62",
+      "type": "Implements",
+      "status": "inferred",
+      "evidence": [
+        "evidence:1a6853e0aadb368b"
+      ],
+      "basis": "入口到产品能力的候选映射"
+    },
+    {
+      "id": "edge:db3a482ebccc3c8f",
+      "source": "cap:114c11bc5964af62",
+      "target": "Function:d93509495106d38f",
+      "type": "RelatedTo",
+      "status": "inferred",
+      "evidence": [
+        "evidence:1a6853e0aadb368b"
+      ],
+      "basis": "源码入口证据"
+    },
+    {
+      "id": "edge:9ee4a0532cf9e465",
+      "source": "module:49a25f9feefaffec",
+      "target": "cap:a56f42f2d2b448ea",
+      "type": "Implements",
+      "status": "inferred",
+      "evidence": [
+        "evidence:f08398b6e4031d7e"
+      ],
+      "basis": "入口到产品能力的候选映射"
+    },
+    {
+      "id": "edge:96ac17c58792a9c8",
+      "source": "cap:a56f42f2d2b448ea",
+      "target": "Function:c7ed26f6ecf9bbec",
+      "type": "RelatedTo",
+      "status": "inferred",
+      "evidence": [
+        "evidence:f08398b6e4031d7e"
+      ],
+      "basis": "源码入口证据"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "evidence:5c762c91dffe93aa",
+      "file": "api/routes.js",
+      "line": 1,
+      "endLine": 1,
+      "snippet": "import { createInstance } from '../service/instances.js';",
+      "hash": "b74cfc67f932366207bf61b996da36f6e1b76686a91190473c51bfb014ffd83e"
+    },
+    {
+      "id": "evidence:357332e80887851a",
+      "file": "api/routes.js",
+      "line": 2,
+      "endLine": 5,
+      "snippet": "export function register(app) {\n  app.post('/instances', (req, res) => res.json(createInstance(req.body)));\n}\n",
+      "hash": "b74cfc67f932366207bf61b996da36f6e1b76686a91190473c51bfb014ffd83e"
+    },
+    {
+      "id": "evidence:e73281b7f48a7092",
+      "file": "api/routes.js",
+      "line": 3,
+      "endLine": 5,
+      "snippet": "  app.post('/instances', (req, res) => res.json(createInstance(req.body)));\n}\n",
+      "hash": "b74cfc67f932366207bf61b996da36f6e1b76686a91190473c51bfb014ffd83e"
+    },
+    {
+      "id": "evidence:25e979af58072bf5",
+      "file": "service/instances.js",
+      "line": 1,
+      "endLine": 1,
+      "snippet": "import { saveInstance } from '../storage/store.js';",
+      "hash": "d3123a6790acc971f3859c9501a4618032a0fc77ad824e08197aef82dce36bd4"
+    },
+    {
+      "id": "evidence:1a6853e0aadb368b",
+      "file": "service/instances.js",
+      "line": 2,
+      "endLine": 3,
+      "snippet": "export function createInstance(input) { return saveInstance({ name: input.name, state: 'ready' }); }\n",
+      "hash": "d3123a6790acc971f3859c9501a4618032a0fc77ad824e08197aef82dce36bd4"
+    },
+    {
+      "id": "evidence:63dbdf42e400d312",
+      "file": "storage/store.js",
+      "line": 1,
+      "endLine": 1,
+      "snippet": "const rows = new Map();",
+      "hash": "3f34a1e29cec3a034ed05ed11d51f6c99879d9842d7386d1ccad320c9140ca6b"
+    },
+    {
+      "id": "evidence:f08398b6e4031d7e",
+      "file": "storage/store.js",
+      "line": 2,
+      "endLine": 3,
+      "snippet": "export function saveInstance(instance) { rows.set(instance.name, instance); return instance; }\n",
+      "hash": "3f34a1e29cec3a034ed05ed11d51f6c99879d9842d7386d1ccad320c9140ca6b"
+    },
+    {
+      "id": "evidence:fcbecc406539a124",
+      "file": "service/instances.js",
+      "line": 2,
+      "endLine": 2,
+      "snippet": "export function createInstance(input) { return saveInstance({ name: input.name, state: 'ready' }); }",
+      "hash": "d3123a6790acc971f3859c9501a4618032a0fc77ad824e08197aef82dce36bd4"
+    }
+  ],
+  "warnings": [],
+  "metadata": {
+    "analyzedAt": "2026-10-19T15:48:58.069Z",
+    "files": 3,
+    "bytes": 440,
+    "truncated": false,
+    "skipped": [],
+    "analysisMode": "local",
+    "coverage": "JS/TS AST；其余语言仅文件结构。调用顺序不是完整控制流，逻辑分层不是部署拓扑。"
+  }
+}

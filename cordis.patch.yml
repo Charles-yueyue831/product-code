@@ -1,0 +1,10 @@
+- insert:
+    - id: codebase-insight
+      name: dsh-codebase-insight
+      inject: [tools, sandboxPolicy, llm]
+      config:
+        outputRoot: insight-output
+        enableModel: false
+        maxFiles: 2000
+        maxFileBytes: 262144
+        timeoutMs: 60000

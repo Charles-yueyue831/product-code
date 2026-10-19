@@ -1,0 +1,5 @@
+{
+ "monolith":{"modules":["根模块"],"capabilities":["createOrder"],"dependencies":[],"flow":"createOrder 调用路径"},
+ "modules":{"modules":["api","service","storage"],"capabilities":["POST /instances","createInstance","saveInstance","register"],"dependencies":[["api","service"],["service","storage"]],"flow":"createInstance 调用路径"},
+ "layered":{"modules":["src/api","src/runtime","src/storage"],"capabilities":["pause","pauseSandbox","updateState"],"dependencies":[["src/api","src/runtime"],["src/runtime","src/storage"]],"flow":"pauseSandbox 调用路径"}
+}
